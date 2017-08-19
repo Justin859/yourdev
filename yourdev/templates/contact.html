@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col jumbotron back-cover" style="background-image: url('/static/assets/images/telephone-586268_1920.jpg');">
+        <div class="text-card">
+            <h2>Contact Us</h2>
+            <h5>We are here to answer any question you have about Yourdev.</h5>
+            <h6>
+              Let us know and we promise to get back to you as soon as possible!
+            </h6>
+        </div>
+    </div>
+</div>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col">
+        <div class="mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__title mdl-card--border" style="font-weight: 600; color: #ffffff; font-family:Arial, Helvetica, sans-serif; background-color:rgb(62, 146, 140)">Have a query?</div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mdl-grid" style="padding: 25px;">
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="name">
+                            <label class="mdl-textfield__label" for="name">Full Name...</label>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="email" id="email">
+                            <label class="mdl-textfield__label" for="email">Email Address...</label>
+                            <span class="mdl-textfield__error">Please enter a valid email address</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-grid" style="padding: 25px;">
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <textarea class="mdl-textfield__input" maxlength="500" rows="10" type="text" id="query"></textarea>
+                            <label class="mdl-textfield__label" for="query">Your Query...</label>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col" style="text-align: center">
+                        <i style="color: rgb(62, 146, 140)" class="fa fa-question-circle fa-5x"></i>&nbsp; Send us your query and we will get back to you as soon as we possibly can!
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--10-offset">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                            Send Query
+                        </button>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <ul class="demo-list-item mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <i>...or email us at:&nbsp;&nbsp;&nbsp;</i><a href="mailto:info@yourdev.co.za?Subject=Query%20from%20yourdev.co.za">info@yourdev.co.za</a>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            </span>
+        </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

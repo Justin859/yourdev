@@ -1,0 +1,88 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Starter Template</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="{% static 'vendor/bower_components/material-design-lite/material.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bower_components/font-awesome/css/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">yourdev.co.za</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        {% if request.get_full_path == '/' %}
+        <a class="mdl-navigation__link active-nav-link">Home</a>
+        {% else %}
+        <a class="mdl-navigation__link" href="/">Home</a>
+        {% endif %}
+        {% if request.get_full_path == '/Get-Started/' %}
+        <a class="mdl-navigation__link active-nav-link">Get Started</a>
+        {% else %}
+        <a class="mdl-navigation__link" href="/Get-Started/">Get Started</a>
+        {% endif %}
+        {% if request.get_full_path == '/Services/' %}
+        <a class="mdl-navigation__link active-nav-link">Services</a>
+        {% else %}
+        <a class="mdl-navigation__link" href="/Services/">Services</a>
+        {% endif %}
+        {% if request.get_full_path == '/Contact/' %}
+        <a class="mdl-navigation__link active-nav-link">Contact</a>
+        {% else %}
+        <a class="mdl-navigation__link" href="/Contact/">Contact</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">yourdev.co.za</span>
+    <nav class="mdl-navigation">
+      {% if request.get_full_path == '/' %}
+      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">home</i>&nbsp;&nbsp;&nbsp;Home</a>
+      {% else %}
+      <a class="mdl-navigation__link" href="/"><i class="material-icons mdl-list__item-icon">home</i>&nbsp;&nbsp;&nbsp;Home</a>
+      {% endif %}
+      {% if request.get_full_path == '/Get-Started/' %}
+      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">mouse</i>&nbsp;&nbsp;&nbsp;Get Started</a>      
+      {% else %}
+      <a class="mdl-navigation__link" href="/Get-Started/"><i class="material-icons mdl-list__item-icon">mouse</i>&nbsp;&nbsp;&nbsp;Get Started</a>      
+      {% endif %}
+      {% if request.get_full_path == '/Services/' %}
+      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">build</i>&nbsp;&nbsp;&nbsp;Services</a>
+      {% else %}
+      <a class="mdl-navigation__link" href="/Services/"><i class="material-icons mdl-list__item-icon">build</i>&nbsp;&nbsp;&nbsp;Services</a>
+      {% endif %}
+      {% if request.get_full_path == '/Contact/' %}
+      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">email</i>&nbsp;&nbsp;&nbsp;Contact</a>
+      {% else %}
+      <a class="mdl-navigation__link" href="/Contact/"><i class="material-icons mdl-list__item-icon">email</i>&nbsp;&nbsp;&nbsp;Contact</a>
+      {% endif %}
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">{% block content %}{% endblock %}</div>
+  </main>
+</div>
+
+</body>
+
+    <script src="{% static 'vendor/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bower_components/material-design-lite/material.min.js' %}"></script>
+    <script src="{% static 'vendor/custom.js' %}"></script>
+
+  </body>
+</html>
