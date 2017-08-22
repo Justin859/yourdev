@@ -15,3 +15,7 @@ def get_started(request):
 def contact(request):
 
     return render(request, 'contact.html')
+
+def index_2(request):
+
+    return render(request, 'index_2.html')

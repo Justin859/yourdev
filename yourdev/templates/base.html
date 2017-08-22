@@ -1,88 +1,74 @@
 {% load static %}
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="mdc-typography">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation Starter Template</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link rel="stylesheet" href="{% static 'vendor/bower_components/material-design-lite/material.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/custom.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/bower_components/font-awesome/css/font-awesome.min.css' %}">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Greeting App</title>
+      <link rel="stylesheet" href="{% static 'vendor/custom.css' %}">
+      <link rel="stylesheet" href="{% static 'vendor/material-components-web.min.css' %}">
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">      
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
   </head>
   <body>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">yourdev.co.za</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        {% if request.get_full_path == '/' %}
-        <a class="mdl-navigation__link active-nav-link">Home</a>
-        {% else %}
-        <a class="mdl-navigation__link" href="/">Home</a>
-        {% endif %}
-        {% if request.get_full_path == '/Get-Started/' %}
-        <a class="mdl-navigation__link active-nav-link">Get Started</a>
-        {% else %}
-        <a class="mdl-navigation__link" href="/Get-Started/">Get Started</a>
-        {% endif %}
-        {% if request.get_full_path == '/Services/' %}
-        <a class="mdl-navigation__link active-nav-link">Services</a>
-        {% else %}
-        <a class="mdl-navigation__link" href="/Services/">Services</a>
-        {% endif %}
-        {% if request.get_full_path == '/Contact/' %}
-        <a class="mdl-navigation__link active-nav-link">Contact</a>
-        {% else %}
-        <a class="mdl-navigation__link" href="/Contact/">Contact</a>
-        {% endif %}
-      </nav>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">yourdev.co.za</span>
-    <nav class="mdl-navigation">
-      {% if request.get_full_path == '/' %}
-      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">home</i>&nbsp;&nbsp;&nbsp;Home</a>
-      {% else %}
-      <a class="mdl-navigation__link" href="/"><i class="material-icons mdl-list__item-icon">home</i>&nbsp;&nbsp;&nbsp;Home</a>
-      {% endif %}
-      {% if request.get_full_path == '/Get-Started/' %}
-      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">mouse</i>&nbsp;&nbsp;&nbsp;Get Started</a>      
-      {% else %}
-      <a class="mdl-navigation__link" href="/Get-Started/"><i class="material-icons mdl-list__item-icon">mouse</i>&nbsp;&nbsp;&nbsp;Get Started</a>      
-      {% endif %}
-      {% if request.get_full_path == '/Services/' %}
-      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">build</i>&nbsp;&nbsp;&nbsp;Services</a>
-      {% else %}
-      <a class="mdl-navigation__link" href="/Services/"><i class="material-icons mdl-list__item-icon">build</i>&nbsp;&nbsp;&nbsp;Services</a>
-      {% endif %}
-      {% if request.get_full_path == '/Contact/' %}
-      <a class="mdl-navigation__link active-mobile-link"><i class="material-icons mdl-list__item-icon">email</i>&nbsp;&nbsp;&nbsp;Contact</a>
-      {% else %}
-      <a class="mdl-navigation__link" href="/Contact/"><i class="material-icons mdl-list__item-icon">email</i>&nbsp;&nbsp;&nbsp;Contact</a>
-      {% endif %}
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content">{% block content %}{% endblock %}</div>
-  </main>
-</div>
+        <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--flexible mdc-toolbar--flexible-default-behavior mdc-toolbar--flexible-space-maximized">
+                <div class="mdc-toolbar__row" style="height: 256px;">
+                  <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                    <div class="hide-desktop"><a class="material-icons mdc-toolbar__icon--menu menu">menu</a></div>
+                    <span class="mdc-toolbar__title" style="font-size: 2.125rem;"><a href="/" style="text-decoration: none; color: #fff;">yourdev.co.za</a></span>
+                  </section>
+                  <div class="hide-mobile">
+                  <section class="mdc-toolbar__section  my-modified-toolbar-section">
+                        <nav id="toolbar-tab-bar-modified" class="mdc-tab-bar mdc-tab-bar-upgraded">
+                            {% if request.get_full_path == "/Get-Started/" %}
+                            <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Get-Started/">Get Started</a>                            
+                            <span class="mdc-tab-bar__indicator" style="transform: translateX(0px) scale(0.333333, 1); visibility: visible;"></span>                                                                                    
+                            {% else %}
+                            <a class="mdc-tab" data-mdc-auto-init="MDCRipple" href="/Get-Started/">Get Started</a>                            
+                            {% endif %}
+                            {% if request.get_full_path == "/Services/" %}
+                            <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Services/">Services</a>
+                            <span class="mdc-tab-bar__indicator" style="transform: translateX(160px) scale(0.333333, 1); visibility: visible;"></span>                            
+                            {% else %}
+                            <a class="mdc-tab" data-mdc-auto-init="MDCRipple" href="/Services/">Services</a>                            
+                            {% endif %}
+                            {% if request.get_full_path == "/Contact/" %}
+                            <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Contact/">Contact</a>    
+                            <span class="mdc-tab-bar__indicator" style="transform: translateX(320px) scale(0.333333, 1); visibility: visible;"></span>                                                        
+                            {% else %}
+                            <a class="mdc-tab" data-mdc-auto-init="MDCRipple" href="/Contact/">Contact</a>    
+                            {% endif %}                            
+                        </nav>
+                  </section>
+                  </div>
+                </div>
+        </header>
+        <main class="mdc-toolbar-fixed-adjust">
+            {% block content %}{% endblock %}
+        </main>
+        <aside class="mdc-temporary-drawer mdc-typography">
+            <nav class="mdc-temporary-drawer__drawer">
+            
+                <div class="mdc-temporary-drawer__toolbar-spacer"></div>
+            
+                <nav id="icon-with-text-demo" class="mdc-temporary-drawer__content mdc-list">
+                <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                </a>
+                </nav>
+            </nav>
+        </aside>
 
-</body>
 
-    <script src="{% static 'vendor/bower_components/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bower_components/material-design-lite/material.min.js' %}"></script>
+
+    <script src="{% static 'vendor/bower_components/jquery/dist/jquery.min.js' %}"></script>    
+    <script src="{% static 'vendor/material-components-web.min.js' %}"></script>
+    <script>window.mdc.autoInit();</script>
     <script src="{% static 'vendor/custom.js' %}"></script>
-
   </body>
 </html>

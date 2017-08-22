@@ -1,111 +1,115 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 
-<div class="mdl-grid mdl-grid--no-spacing">
-    <div class="mdl-cell mdl-cell--12-col jumbotron back-cover" style="background-image: url('/static/assets/images/responsive-1622825.png');">
-        <div class="text-card">
-            <h2>WELCOME TO YOURDEV</h2>
-            <h5>Are you looking for more than just a Website?</h5>
-            <h6>
-                Then you have come to the right place! We develop user friendly Web Applications for businesses who need more
-                than just the typical website.
-            </h6>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+        <div class="mdc-card">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large">WELCOME TO YOURDEV</h1>
+              <h2 class="mdc-card__subtitle">Are you looking for more than just a Website?</h2>
+            </section>
+            <section class="mdc-card__supporting-text">
+                Then you have come to the right place! We develop user friendly Web Applications for businesses who need more than just the typical website. 
+            </section>
         </div>
     </div>
-</div>
-<br>
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-card--border mdl-shadow--4dp">
-            <div class="mdl-card__title mdl-card--border" style="font-weight: 600; color: #ffffff; font-family:Arial, Helvetica, sans-serif; background-color:rgb(62, 146, 140)">About</div>
-            <div class="mdl-card__supporting-text">
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet" style="height: 100%;">
+        <div class="mdc-card">
+            <section class="mdc-card__media mdc-theme--accent-bg">
+              <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">About</h1>
+            </section>
+            <section class="mdc-card__supporting-text">
                 <p><b>Yourdev</b> focuses on simplicity for the end user and the websites adminstrator.
-                Our ideal targets are <u><i>small to medium businesses</i></u> that need their image on the web,
-                whether it's to market their <i>services</i>, <i>events</i>, <i>products</i>...</p>
-                <p>We are in a world of information technology where every bit of data counts. <b>Get started now! with Yourdev!</b></p>
-            </div>
+                  Our ideal targets are <u><i>small to medium businesses</i></u> that need their image on the web,
+                  whether it's to market their <i>services</i>, <i>events</i>, <i>products</i>...</p>
+                  <p>We are in a world of information technology where every bit of data counts. <b>Get started now with Yourdev!</b></p>
+              </section>
         </div>
     </div>
 
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-    <div class="get-started-event mdl-card mdl-shadow--4dp get-started-card">
-    <div class="mdl-card__title mdl-card--expand"></div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a href="/Get-Started/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Get Started
-        </a>
-      <div class="mdl-layout-spacer"></div>
-      </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+        <div class="mdc-card mdc-card--theme-dark get-started-card get-started-card--bg-get-started" style="background-image: url('/static/assets/images/hand-895592_1920.jpg');">
+            <section class="mdc-card__actions">
+              <a href="/Get-Started/" class="mdc-button mdc-button--compact mdc-button--theme-dark mdc-card__action">Get Started</a>
+            </section>
+          </div>
     </div>
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+        <div class="mdc-card mdc-card--theme-dark get-started-card get-started-card--bg-get-started" style="background-image: url('/static/assets/images/entrepreneur-593378_1920.jpg');">
+            <section class="mdc-card__media">
+                <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">How does it work?</h1>
+                <h2 class="mdc-card__subtitle">In just a few steps we'll be in touch!</h2>                
+            </section>
+        </div>
+    </div>
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+        <div class="mdc-card">
+          <section class="mdc-card__primary">
+            <div align="center" style="background-color: #263238">
+                <img class="mdc-card__media-item" src="{% static 'assets/icons/ic_link_white_48dp_2x.png' %}">
+            </div>
+            <h2 class="mdc-card__title mdc-card__title--large">Navigate to the Get Started Page</h2>
+            <br>
+            <h5 class="mdc-card__subtitle">On this page you will fill in a quick and simple form to describe your business and what type of website your business needs.</h5>
+          </section>
+
+          <section class="mdc-card__actions">
+            <a href="/Get-Started/" class="mdc-button mdc-button--accent mdc-button--raised mdc-card__action">Get Started</a>
+          </section>
+        </div>
+    </div>
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+        <div class="mdc-card">
+          <section class="mdc-card__primary">
+            <div align="center" style="background-color: #263238">
+                <img class="mdc-card__media-item" src="{% static 'assets/icons/ic_assignment_white_48dp_2x.png' %}">
+            </div>
+            <h2 class="mdc-card__title mdc-card__title--large">Complete And Submit The Form</h2>
+            <br>
+            <h5 class="mdc-card__subtitle">Once the form is submitted you will recieve a quotation evaluated on the scale of your websites needs.</h5>
+          </section>
+          <div style="padding-bottom: 3.25rem;"></div>
+
+        </div>
+    </div>
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+        <div class="mdc-card">
+              <section class="mdc-card__primary">
+                <div align="center" style="background-color: #263238">
+                    <img class="mdc-card__media-item" src="{% static 'assets/icons/ic_forum_white_48dp_2x.png' %}">
+                </div>
+                <h2 class="mdc-card__title mdc-card__title--large">Contact The Developer</h2>
+                <br>
+                <h5 class="mdc-card__subtitle">Recieve the contact details of the developer. Meet in person, chat over email, skype or a friendly phone call.</h5>
+              </section>
+              <div style="padding-bottom: 3.25rem;"></div>
+        </div>
+    </div>
+
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+        <div class="mdc-card">
+          <section class="mdc-card__primary">
+            <div align="center" style="background-color: #263238">
+                <img class="mdc-card__media-item" src="{% static 'assets/icons/ic_web_white_48dp_2x.png' %}">
+            </div>
+            <h2 class="mdc-card__title mdc-card__title--large">Your New Website</h2>
+            <br>
+            <h5 class="mdc-card__subtitle">Recieve the details of your new website and get to know how your Website/ Web Application works. </h5>
+          </section>
+          <div style="padding-bottom: 3.25rem;"></div>
+        </div>
+    </div>
+
   </div>
-
-</div>
-<br>
-<div class="mdl-grid mdl-grid--no-spacing">
-    <div class="mdl-cell mdl-cell--12-col back-cover jumbotron" style="background-image: url('/static/assets/images/entrepreneur-593378_1920.jpg');">
-        <div class="text-card" style="text-align: center;">
-            <h2>How Does It Work?</h2>
-        </div>
-    </div>
-</div>
-<br>
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-shadow--4dp">
-            <div class="mdl-card__media" style="text-align: center;">
-                <img src="{% static 'assets/icons/ic_link_white_48dp_2x.png' %}">
-            </div>
-            <div class="mdl-card__title">
-                <div class="mdl-card__title-text">Navigate To The Get Started Page</div>
-            </div>
-            <div class="mdl-card__supporting-text">
-                On this page you will fill in a quick and simple form to describe your business and what type of website your business needs. 
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="/Get-Started/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">Get Started</a>
-            </div>
-        </div>
-    </div>
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-shadow--4dp">
-            <div class="mdl-card__media" style="text-align: center;">
-                <img src="{% static 'assets/icons/ic_assignment_white_48dp_2x.png' %}">
-            </div>
-            <div class="mdl-card__title">
-                <div class="mdl-card__title-text">Complete And Submit The Form</div>
-            </div>
-            <div class="mdl-card__supporting-text">
-                Once the form is submitted you will recieve a quotation evaluated on the scale of your websites needs. 
-            </div>
-        </div>
-    </div>
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-shadow--4dp">
-            <div class="mdl-card__media" style="text-align: center;">
-                <img src="{% static 'assets/icons/ic_forum_white_48dp_2x.png' %}">
-            </div>
-            <div class="mdl-card__title">
-                <div class="mdl-card__title-text">Contact The Developer</div>
-            </div>
-            <div class="mdl-card__supporting-text">
-                Recieve the contact details of the developer. Meet in person, chat over email, skype or a friendly phone call. 
-            </div>
-        </div>
-    </div>
-    <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-shadow--4dp">
-            <div class="mdl-card__media" style="text-align: center;">
-                <img src="{% static 'assets/icons/ic_web_white_48dp_2x.png' %}">
-            </div>
-            <div class="mdl-card__title">
-                <div class="mdl-card__title-text">Your New Website</div>
-            </div>
-            <div class="mdl-card__supporting-text">
-                Recieve the details of your new website and get to know how your Website/ Web Application works. 
-            </div>
-        </div>
-    </div>
 </div>
 
 {% endblock %}

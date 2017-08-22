@@ -1,93 +1,96 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
 
-<div class="mdl-grid mdl-grid--no-spacing">
-    <div class="mdl-cell mdl-cell--12-col jumbotron back-cover" style="background-image: url('/static/assets/images/agreement-2286439_1920.jpg');">
-        <div class="text-card">
-            <h2>Our Services</h2>
-            <h5>We are here to help you every step of the way.</h5>
-            <h6>
-                From getting a domain in your company's name for your website and email addresses. ex: (info@yourdev.co.za, www.yourdev.co.za)
-            </h6>
-        </div>
-    </div>
-</div>
-
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-card--border mdl-shadow--4dp">
-            <div class="mdl-card__title" style="font-weight: 600; color: #ffffff; font-family:Arial, Helvetica, sans-serif; background-color:rgb(62, 146, 140)">
-                Websites
-            </div>
-            <div class="mdl-card__supporting-text">
-                <p>Yourdev will host, maintain and update your website. We also implement simple self maintanence through an administration login.</p>
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 jumbotron back-cover" style="background-image: url('/static/assets/images/agreement-2286439_1920.jpg');">
+            <div class="text-card">
+                <h1>Our Services</h1>
+                <h2>We are here to help you every step of the way.</h2>
+                <h5>
+                    From getting a domain in your company's name for your website and email addresses. ex: (info@yourdev.co.za, www.yourdev.co.za). To getting you up on the web.
+                </h5>
             </div>
         </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-card--border mdl-shadow--4dp ">
-            <div class="mdl-card__title" style="font-weight: 600; color: #ffffff; font-family:Arial, Helvetica, sans-serif; background-color:rgb(62, 146, 140)">
-                Domain Registration
-            </div>
-            <div class="mdl-card__supporting-text">
-                <p>We will help you through the process of registering your domain for your website and emails.</p>
-            </div>
-        </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
-        <div class="mdl-card mdl-card--border mdl-shadow--4dp">
-            <div class="mdl-card__title" style="font-weight: 600; color: #ffffff; font-family:Arial, Helvetica, sans-serif; background-color:rgb(62, 146, 140)">
-                Marketing
-            </div>
-            <div class="mdl-card__supporting-text">
-                <p>Your website plays a big part with communicating to your customers, we break the communication barrier for your
-                customer to get all the information they need from your company and their information to you.
-                </p>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet my-card-container">
+            <div class="mdc-card">
+                <section class="mdc-card__media mdc-theme--accent-bg">
+                    <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">Websites</h1>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    <p>Yourdev will host, maintain and update your website.</p>
+                    <p>We also implement simple self maintanence through an administration login.</p>
+                    <p>A customized layout that can be easily updated by you.</p>
+                </section>
             </div>
         </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet my-card-container">
+            <div class="mdc-card">
+                <section class="mdc-card__media mdc-theme--accent-bg">
+                    <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">Domain Registration</h1>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    <p>We will help you through the process of registering your domain for your website and emails.</p>
+                    <p>It is far more professional to use your company name for your websites domain and emails</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-12-tablet my-card-container">
+            <div class="mdc-card">
+                <section class="mdc-card__media mdc-theme--accent-bg">
+                    <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">Marketing</h1>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    <p>Your website plays a big part with communicating to customers.</p>
+                    <p>We break the communication barrier between client and company to get all the information they need from your company and their information to you.</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-2-tablet">
+            <div align="center">
+                <img src="{% static 'assets/icons/ic_touch_app_black_48dp_2x.png' %}">
+            </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-6-tablet">
+            <p>
+                Get a website that actually does something. Features for your bussines and your clients to communicate with.
+            </p>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-2-tablet">
+            <div align="center">
+                <img src="{% static 'assets/icons/ic_shopping_cart_black_48dp_2x.png' %}">
+            </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-6-tablet">
+            <p>Need a gateway to sell your products. We will provide you with a web application that can sell!</p>
+        </div>
+        
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-2-tablet">
+            <div align="center">
+                <img src="{% static 'assets/icons/ic_update_black_48dp_2x.png' %}">
+            </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-6-tablet">
+            <p>Need an upgrade? If you have an old webiste that is outdated and missing todays standards we will upgrade it for you.</p>
+        </div>
+
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-2-tablet">
+            <div align="center">
+                <img src="{% static 'assets/icons/ic_person_pin_black_48dp_2x.png' %}" align="center">
+            </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-6-tablet">
+            <p>Communication is key. Why not have a personal connection with the developer? With Yourdev that's the only way we know how.</p>
+        </div>
+
     </div>
-</div>
-
-<br>
-
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--12-col-phone mdl-cell--2-col-tablet" style="text-align: center;">
-        <img src="{% static 'assets/icons/ic_touch_app_black_48dp_2x.png' %}">
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
-        <p>Get a website that actually does something. Features for your bussines and your clients to communicate with.</p>
-    </div>
-
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--12-col-phone mdl-cell--2-col-tablet" style="text-align: center;">
-        <img src="{% static 'assets/icons/ic_shopping_cart_black_48dp_2x.png' %}">
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
-        <p>Need a gateway to sell your products. We will provide you with a web application that can sell!</p>
-    </div>
-
-</div>
-
-<div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--12-col-phone mdl-cell--2-col-tablet" style="text-align: center;">
-        <img src="{% static 'assets/icons/ic_update_black_48dp_2x.png' %}">
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
-        <p>Need an upgrade? If you have an old webiste that is outdated and missing todays standards we will upgrade it for you.</p>
-    </div>
-
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--12-col-phone mdl-cell--2-col-tablet" style="text-align: center;">
-        <img src="{% static 'assets/icons/ic_person_pin_black_48dp_2x.png' %}">
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
-        <p>Communication is key. Why not have a personal connection with the developer? With Yourdev that's the only way we know how.</p>
-    </div>
-
 </div>
 
 {% endblock %}
