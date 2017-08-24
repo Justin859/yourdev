@@ -21,26 +21,27 @@
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
             <div class="mdc-card" style="padding:15px;">
                 <div class="mdc-textfield-name mdc-textfield--box">
-                    <input type="text" id="my-textfield-name" class="mdc-textfield__input" aria-controls="username-helptext" required>
+                    <input type="text" name="client_name" maxlength="100" id="my-textfield-name" class="mdc-textfield__input" aria-controls="username-helptext" required>
                     <label class="mdc-textfield__label" for="my-textfield-name">Your name</label>
                 </div>
                 <p id="username-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                     Preferably your full name
                 </p>
-
                 <div class="mdc-textfield-email mdc-textfield--box">
-                    <input type="email" id="my-textfield-two" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
+                    <input type="email" name="client_email" maxlength="255" id="my-textfield-two" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
                     <label class="mdc-textfield__label" for="my-textfield-email">Your email address</label>
                 </div>
                 <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="email-validation-msg">
                 Please enter a valid email address
                 </p>
                 <div class="mdc-textfield-query mdc-textfield--multiline">
-                    <textarea maxlength=1001 id="multi-line" class="mdc-textfield__input" requried></textarea>
+                    <textarea maxlength=1001 name="client_query" id="multi-line" class="mdc-textfield__input" rows="8" requried></textarea>
                     <label for="multi-line" class="mdc-textfield__label">Your Query</label>
                 </div>
                 <hr>
-                <button type="submit" class="mdc-button mdc-button--accent mdc-button--raised mdc-card__action">Send Query</button>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-6">
+                    <button type="submit" class="mdc-button mdc-button--accent mdc-button--raised mdc-card__action send-query">Send Query</button>
+                </div>
             </div>
         </div>
     </div>

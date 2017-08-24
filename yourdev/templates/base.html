@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Greeting App</title>
-      <link rel="stylesheet" href="{% static 'vendor/custom.css' %}">
       <link rel="stylesheet" href="{% static 'vendor/material-components-web.min.css' %}">
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">      
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+      <link rel="stylesheet" href="{% static 'vendor/custom.css' %}">
+    
   </head>
   <body>
 
@@ -51,15 +52,36 @@
         <aside class="mdc-temporary-drawer mdc-typography">
             <nav class="mdc-temporary-drawer__drawer">
             
-                <div class="mdc-temporary-drawer__toolbar-spacer"></div>
+                <div class="mdc-temporary-drawer__toolbar-spacer" style="background-color: #00796b;"><a href="/" style="text-decoration: none; color:#fff;">yourdev.co.za</a></div>
             
                 <nav id="icon-with-text-demo" class="mdc-temporary-drawer__content mdc-list">
-                <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
-                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                {% if request.get_full_path == '/Get-Started/' %}
+                <a class="mdc-list-item mdc-temporary-drawer--selected" href="/Get-Started/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">assignment</i>Get Started
                 </a>
-                <a class="mdc-list-item" href="#">
-                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                {% else %}
+                <a class="mdc-list-item" href="/Get-Started/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">assignment</i>Get Started
                 </a>
+                {% endif %}
+                {% if request.get_full_path == '/Services/' %}
+                <a class="mdc-list-item mdc-temporary-drawer--selected" href="/Services/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">build</i>Services
+                </a>
+                {% else %}
+                <a class="mdc-list-item" href="/Services/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">build</i>Services
+                </a>
+                {% endif %}
+                {% if request.get_full_path == '/Contact/' %}
+                <a class="mdc-list-item mdc-temporary-drawer--selected" href="/Contact/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>Contact
+                </a>
+                {% else %}
+                <a class="mdc-list-item" href="/Contact/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>Contact
+                </a>
+                {% endif %}
                 </nav>
             </nav>
         </aside>

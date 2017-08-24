@@ -11,23 +11,36 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+import environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+root_path = environ.Path(__file__) - 2
+env = environ.Env(DEBUG=(bool, False), DJANGO_ENV=(str, 'dev')) # set default    values and casting
+environ.Env.read_env(root_path('.env')) 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h1(8vqk$#xd9owqcc2axs&xb_zb4y(^wfl(3=ud7*np3fmzze1'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['yourdev-env.2dn3v2shtt.us-east-1.elasticbeanstalk.com', '127.0.0.1']
 
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
+EMAIL_HOST_USER = 'query@yourdev.co.za'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = True
+EMAIL_PORT = 587
 
 # Application definition
 

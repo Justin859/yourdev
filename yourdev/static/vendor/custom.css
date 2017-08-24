@@ -1,3 +1,8 @@
+:root {
+  --mdc-theme-primary: #00796b;
+  --mdc-theme-accent: #263238;
+}
+  
   .jumbotron {
     width: 100%;
     height: auto;
@@ -85,6 +90,7 @@
   .hide-mobile { 
     display: none;
   }
+
 }
 
 @media only screen and (min-width: 760px) {
@@ -93,9 +99,10 @@
   }
 }
 
-* {
-  --mdc-theme-primary: #00796b;
-  --mdc-theme-accent: #263238;
+.send-query {
+  width: 25%;
+  float: right;
+  overflow: hidden;
 }
 
 .get-started-card--bg-get-started {
@@ -115,10 +122,45 @@
   }
 }
 
+@media(min-width: 768px) {
+  .get-started-card {
+    height: 14.850rem;
+  }
+}
+
 body {
   background-color: #fafafa;
 }
 
 .mdc-card {
   background-color: #fff;
+}
+
+/* initialize it off screen. */
+.loading .example .mdc-snackbar { transform: translateY(200%); }
+
+.mdc-theme--dark {
+  background-color: #333;
+}
+
+.mdc-theme--dark .hero {
+  background-color: #2d2d2d;
+}
+
+/* Override style for hero example. */
+.hero .mdc-snackbar {
+  position: relative;
+  left: auto;
+}
+.hero .mdc-snackbar--active {
+  transform: none;
+}
+
+.field {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.demo-activate-button {
+  margin-top: 14px;
 }

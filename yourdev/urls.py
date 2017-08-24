@@ -25,5 +25,4 @@ urlpatterns = [
     url(r'^Services/$', views.services, name='services'),
     url(r'^Get-Started/$', views.get_started, name='Get-Started'),
     url(r'^Contact/$', views.contact, name='contact'),
-    url(r'^index-2/$', views.index_2, name='index_2'),
 ]
