@@ -4,15 +4,17 @@
 {% block content %}
 <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 jumbotron back-cover" style="background-image: url('/static/assets/images/telephone-586268_1920.jpg');">
-            <div class="text-card">
-                <h1>Contact Us</h1>
-                <h2>We're more than happy to answer any questions you have about Yourdev.</h2>
-                <h4>And how to get your company on the web with us.</h4>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <div class="mdc-card mdc-card--theme-dark get-started-card get-started-card--bg-get-started" style="background-image: url('/static/assets/images/telephone-586268_1920.jpg');">
+                <section class="mdc-card__media">
+                    <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">Contact Us</h1>
+                    <h2 class="mdc-card__subtitle">We're more than happy to answer any questions you have about Yourdev...</h2> 
+                    <h2 class="mdc-card__subtitle">and how to get your company on the web with us.</h2>                            
+                </section>
             </div>
         </div>
     </div>
-</div>   
+</div>
 
 <form action="" name="contact" method="POST">
 {% csrf_token %}
@@ -20,23 +22,23 @@
     <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
             <div class="mdc-card" style="padding:15px;">
-                <div class="mdc-textfield-name mdc-textfield--box">
-                    <input type="text" name="client_name" maxlength="100" id="my-textfield-name" class="mdc-textfield__input" aria-controls="username-helptext" required>
-                    <label class="mdc-textfield__label" for="my-textfield-name">Your name</label>
+                <div class="mdc-client_name mdc-textfield--box">
+                    <input type="text" name="client_name" maxlength="100" id="mdc-client_name" class="mdc-textfield__input" aria-controls="username-helptext" required>
+                    <label class="mdc-textfield__label" for="mdc-client_name">Your name</label>
                 </div>
                 <p id="username-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                     Preferably your full name
                 </p>
-                <div class="mdc-textfield-email mdc-textfield--box">
-                    <input type="email" name="client_email" maxlength="255" id="my-textfield-two" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
-                    <label class="mdc-textfield__label" for="my-textfield-email">Your email address</label>
+                <div class="mdc-client-mail mdc-textfield--box">
+                    <input type="email" name="client_email" maxlength="255" id="mdc-client-mail" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
+                    <label class="mdc-textfield__label" for="mdc-client-mail">Your email address</label>
                 </div>
                 <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="email-validation-msg">
                 Please enter a valid email address
                 </p>
-                <div class="mdc-textfield-query mdc-textfield--multiline">
-                    <textarea maxlength=1001 name="client_query" id="multi-line" class="mdc-textfield__input" rows="8" requried></textarea>
-                    <label for="multi-line" class="mdc-textfield__label">Your Query</label>
+                <div class="mdc-client-query mdc-textfield--multiline">
+                    <textarea maxlength=1001 name="client_query" id="mdc-client-query" class="mdc-textfield__input" rows="8" requried></textarea>
+                    <label for="mdc-client-query" class="mdc-textfield__label">Your Query</label>
                 </div>
                 <hr>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-6">
@@ -48,5 +50,24 @@
 </div>
 </form>
 
+<div id="overlay_text">
+    <div id="text_message">Sending Query...</div>
+</div>
+
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">       
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone">
+            <div class="mdc-card mdc-card--theme-dark">
+                <section class="mdc-card__primary">
+                    email us at <a href="mailto:info@yourdev.co.za?Subject=Online Query (yourdev.co.za)" style="text-decoration: none; color:#00796b" target="_top"><b>info@yourdev.co.za</b></a>
+                </section>            
+            </div>        
+        </div>
+    </div>
+</div>
+
+<div id="overlay">
+    <div id="text"><div class="loader"></div></div>
+</div>
 
 {% endblock %}

@@ -4,16 +4,18 @@
 {% block content %}
 
 {% if messages %}
+    {% for message in messages %}
 <div class="mdc-snackbar mdc-snackbar--active"
 style="z-index: 9"
 aria-live="assertive"
 aria-atomic="true"
 aria-hidden="true">
- <div class="mdc-snackbar__text">Your query has been sent.</div>
+ <div class="mdc-snackbar__text">{{message}}</div>
  <div class="mdc-snackbar__action-wrapper">
    <button type="button" class="mdc-button  mdc-snackbar__action-button" style="color: #009624;">close</button>
  </div>
 </div>
+    {% endfor %}
 {% endif %}
 
 <div class="mdc-layout-grid">

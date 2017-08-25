@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from django.core.mail import send_mail, BadHeaderError
 
-from .forms import ClientQuery
+from .forms import ClientQuery, ClientForm
 
 def index(request):
     return render(request, 'index.html')
@@ -15,7 +15,15 @@ def services(request):
 
 def get_started(request):
 
-    return render(request, 'get_started.html')
+    if request.method == 'POST':
+        form = ClientForm(request.PSOT)
+
+        #if form.is_valid():
+            # get cleanded data
+
+    else:
+        form = ClientForm()
+    return render(request, 'get_started.html', {'form': form})
 
 def contact(request):
 
@@ -32,7 +40,8 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid Header found.')
 
-            messages.success(request, 'Thank you for your query! We will contact you as soon as possible.')
+            messages.success(request, 'Your query has been sent.')
             return HttpResponseRedirect('/') 
-
-    return render(request, 'contact.html')
+    else:
+        form = ClientQuery()
+    return render(request, 'contact.html', {'form': form})
