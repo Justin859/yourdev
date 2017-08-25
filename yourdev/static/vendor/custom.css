@@ -37,6 +37,12 @@
 
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 1024px){
+  .hide-tablet {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 760px) {
   .hide-desktop { 
     display: none;
@@ -77,7 +83,7 @@
     height: 14.850rem;
   }
   #company_physical_address, #company_description {
-    width: 48rem;
+    width: 40rem;
     resize: none;
   }
 }
