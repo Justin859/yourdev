@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/bower_components/bootstrap/dist/css/bootstrap.min.css' %}" crossorigin="anonymous">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/ms.css' %}">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row" style="padding: 15px;">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <div class="card how-to-card">
+              <div class="text-container" style="padding-top: 25px;">
+                  <h4>Client Form</h4>
+                  <h6>This from will be uploaded to us so that we can start communicating straight away. We will send you a Quote/ Proposal for your bussiness to agree upon.</h6>
+              </div>
+              <form action="" method="POST" name="client_form" style="padding: 15px;">
+                {% csrf_token %}
+                <h4 class="card-title">Client Details</h4><br />
+                <div class="row">
+                    <div class="col-5">
+                        <input type="text" maxlength="100" name="client_first_name" class="text-input" id="InputName" value="" aria-describedby="NameHelp" required>                       
+                        <small class="form-text text-danger invisible">Please enter your first name.</small>    
+                        <span class="floating-label-text">First Name<span class="required-mark">*</span></span> 
+                    </div>
+                    <div class="col-5">
+                        <input type="text" maxlength="100" name="client_last_name" class="text-input" id="InputName" value="" aria-describedby="NameHelp" required>
+                        <small class="form-text text-danger invisible">Please enter your last name.</small>    
+                        <span class="floating-label-text">Last Name<span class="required-mark">*</span></span> 
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-10">
+                      <input type="email" maxlength="255" name="client_email" id="InputEmail" value="" class="form-control email-input" required>
+                      <small class="form-text text-danger invisible">Please enter a valid email address.</small>
+                      <span class="floating-label-email">Your email address<span class="required-mark">*</span></span>                                                 
+                  </div>
+                </div>
+                <h4 class="card-title">Company Details</h4><br />
+                <div class="row">
+                  <div class="col-10">
+                      <input type="text" maxlength="100" name="company_name" class="text-input" id="InputName" value="" aria-describedby="NameHelp" required>
+                      <small class="form-text text-danger invisible">Please enter the company's name.</small>    
+                      <span class="floating-label-text">Comapny Name<span class="required-mark">*</span></span> 
+                  </div>
+                </div><br />
+                <div class="row">
+                  <div class="col-10">
+                      <textarea type="text" maxlength=1001 name="company_physical_address" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
+                      <small class="form-text text-danger invisible">Please enter the company's physical address.</small> 
+                      <span class="floating-label-query">Physical Address<span class="required-mark">*</span></span>                                                                         
+                  </div>
+                </div><br />
+                <div class="row">
+                  <div class="col-10">
+                      <textarea type="text" maxlength=1001 name="company_description" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
+                      <small class="form-text text-danger invisible">Please enter the company's physical address.</small> 
+                      <span class="floating-label-query">Company Description<span class="required-mark">*</span></span>                                                                         
+                  </div>
+                </div>
+                <h4 class="card-title">Website Details</h4><br />
+                <div class="form-inline">
+                  <div class="form-check">
+                    <label>
+                      <input class="myCheckbox" name="has_domain" type="checkbox">
+                      <span class="theCheckbox"></span>
+                    </label> &nbsp; {{form.has_domain.label}}                    
+                  </div>
+                </div><br />
+
+                <div class="form-inline">
+                <label><b>{{form.website_type.label}}</b></label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="website_type" id="gridRadios1" value="Standard Website" checked>
+                      <span class="theRadio1"></span> &nbsp; Standard Website
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="website_type" id="gridRadios2" value="Web Application"> 
+                      <span class="theRadio2"></span> &nbsp; Web Application
+                    </label>
+                  </div>
+                </div><br /><br />
+                <div class="row">
+                  <div class="col-10">
+                      <textarea type="text" maxlength=1001 name="website_description" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
+                      <small class="form-text text-danger invisible">Please enter the company's description.</small> 
+                      <span class="floating-label-query">Website Description<span class="required-mark">*</span></span>                                                                         
+                  </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn" type="submit" style="background-color: #263238; color:#ffffff; font-size: 13px; width:135px !important; border-radius: 2px;"><b>SUBMIT FORM</b></button>
+                </div>
+              </form>
+          </div>
+        <div class="col-2"></div>
+      </div>
+      </div>
+    </div>
+
+    <div id="overlay">
+        <div id="text">
+            <div class="loader"></div>
+            <div class="loader-text">&nbsp;Submiting Form...</div>
+        </div>
+    </div>
+
+    <a href="/" class="btn" id="myBtn" style="background-color: #263238; color:#ffffff; font-size: 13px; width:70px !important; border-radius: 1px;">BACK</a>
+    
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'vendor/bower_components/jquery/dist/jquery.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{% static 'vendor/bower_components/popper.js/dist/umd/popper.min.js' %}" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="{% static 'vendor/bower_components/bootstrap/dist/js/bootstrap.min.js' %}" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="{% static 'vendor/ms.js' %}"></script>
+  </body>
+</html>

@@ -10,7 +10,6 @@
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">      
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
       <link rel="stylesheet" href="{% static 'vendor/custom.css' %}">
-    
   </head>
   <body>
 
@@ -23,12 +22,7 @@
                   <div class="hide-mobile">
                   <section class="mdc-toolbar__section  my-modified-toolbar-section">
                         <nav id="toolbar-tab-bar-modified" class="mdc-tab-bar mdc-tab-bar-upgraded">
-                            {% if request.get_full_path == "/Get-Started/" %}
                             <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Get-Started/">Get Started</a>                            
-                            <span class="mdc-tab-bar__indicator" style="transform: translateX(0px) scale(0.333333, 1); visibility: visible;"></span>                                                                                    
-                            {% else %}
-                            <a class="mdc-tab" data-mdc-auto-init="MDCRipple" href="/Get-Started/">Get Started</a>                            
-                            {% endif %}
                             {% if request.get_full_path == "/Services/" %}
                             <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Services/">Services</a>
                             <span class="mdc-tab-bar__indicator" style="transform: translateX(160px) scale(0.333333, 1); visibility: visible;"></span>                            

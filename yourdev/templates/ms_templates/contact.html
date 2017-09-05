@@ -1,0 +1,73 @@
+{% extends 'ms_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row" style="padding: 15px; margin-top: 18px;">
+        <div class="col-12">
+            <div class="card how-to" style="background: url('/static/assets/images/telephone-586268_1920.jpg') center / cover;">
+                <div class="card-body">
+                    <h4 class="card-title">Contact Us</h4>
+                    <h6 class="card-subtitle mb-2">We're more than happy to answer any questions you have about Yourdev...</h6>
+                    <h6 class="card-subtitle mb-2">and how to get your company on the web with us.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-12">
+            <div class="card how-to-card" style="padding: 15px;">
+                <form action="" method="POST" name="contact">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input type="text" name="client_name" class="form-control text-input" id="InputName" value="" aria-describedby="NameHelp" required>                       
+                                <small class="form-text text-danger invisible">Please enter your name.</small>    
+                                <span class="floating-label-text">Your name<span class="required-mark">*</span></span> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input type="email" name="client_email" id="InputEmail" value="" class="form-control email-input" required>
+                                <small class="form-text text-danger invisible">Please enter a valid email address.</small>
+                                <span class="floating-label-email">Your email address<span class="required-mark">*</span></span>                                                 
+                            </div><br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea type="text" name="client_query" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
+                                <small class="form-text text-danger invisible">Please enter your query.</small> 
+                                <span class="floating-label-query">Your Query<span class="required-mark">*</span></span>                                                                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" align="right" style="padding: 0px; margin: 0px;">
+                        <button class="btn" type="submit" style="background-color: #263238; color:#ffffff; font-size: 13px; width:250px !important;"><b>SEND QUERY</b></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-3">
+            <div class="card how-to-card" style="padding: 15px;">
+                <p>email us at <a href="mailto:info@yourdev.co.za?Subject=Online Query (yourdev.co.za)" style="text-decoration: none; color:#00796b" target="_top"><b>info@yourdev.co.za</b></a></p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay">
+    <div id="text">
+        <div class="loader"></div>
+        <div class="loader-text">&nbsp;Sending Query...</div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,332 @@
+body {
+    background-color: #fafafa;
+}
+
+.navbar {
+    color: #fff !important;
+}
+
+.navbar a:link, .navbar a:visited, .navbar a:active {
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+@media only screen and (min-width: 1024px){
+    .navbar li {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .navbar .nav-link {
+        position: relative;
+    }
+    .navbar {
+        padding-bottom: 15px; 
+        padding-top: 15px;
+    }
+  }
+
+ul .active .nav-link {
+    color: #ffffff !important;
+}
+
+.get-started, .how-to {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(167, 167, 167, 0.5);    
+    padding-top: 150px;
+    color: #ffffff;
+}
+
+.card {
+    box-shadow: 0px 0px 8px #bdbdbd;
+    border-radius: 2px;
+    border: none;
+    height: 100%;
+}
+
+.get-started .card-body, .how-to .card-body{
+    background: rgba(0, 0, 0, .4);
+}
+
+.get-started .card-link {
+    color: #ffffff;
+}
+
+.card-link {
+    padding: 8px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+.card-body a:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+.img-container {
+    background-color: #263238;
+    margin: 15px;
+}
+
+.text-container {
+    background-color: #263238;
+    font-size: 25px;
+    color: #ffffff;
+    padding: 15px;
+}
+
+.card-img-top {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.how-to-card a:hover {
+    background: #37474f !important;
+}
+
+input[type=text], input[type=email] {
+    width: 100%;
+    background-color: #eeeeee;
+    border-radius: 2px;
+    border: 0px;
+    height: 60px;
+}
+
+input[type=text]:focus, input[type=email]:active,
+input[type=text]:focus, input[type=email]:focus {
+    background-color: #eeeeee !important;
+    border-radius: 2px !important;    
+}
+
+textarea {
+    border-radius: 2px !important;
+}
+
+textarea:focus {
+    border: #00796b solid 1px !important;
+}
+
+.text-input, .email-input {
+    padding-left: 13px;
+    padding-top: 15px;
+}
+
+.textarea-input {
+    padding: 5px;
+}
+
+.text-input:focus ~ .floating-label-text,
+.email-input:focus ~ .floating-label-email,
+.text-input:not(:focus):valid ~ .floating-label-text,
+.email-input-filled:not(:focus) ~ .floating-label-email { 
+    font-size: 12px !important;
+    opacity: 1 !important;
+}
+
+.email-input:focus ~ .floating-label-email,
+.text-input:focus ~ .floating-label-text,
+.textarea-input:focus ~ .floating-label-query {
+    color: #00796A !important;
+}
+
+.email-input-filled:not(:focus) ~ .floating-label-email,
+.text-input:not(:focus):valid ~ .floating-label-text,
+.textarea-input:not(:focus):valid ~ .floating-label-query {
+    color: #888888 !important;
+    opacity: 0.5;
+}
+
+.text-input:focus ~ .floating-label-text .required-mark,
+.email-input:focus ~ .floating-label-email .required-mark,
+.textarea-input:focus ~ .floating-label-query .required-mark {
+    color: #ff5131 !important;
+}
+
+.text-input:focus:focus ~ .floating-label-text,
+.email-input:focus:focus ~ .floating-label-email,
+.text-input:not(:focus):valid ~ .floating-label-text,
+.email-input-filled:not(:focus) ~ .floating-label-email{
+    top: 2px !important;
+    bottom: 25px !important;
+    left: 30px !important;
+}
+
+.textarea-input:focus ~ .floating-label-query,
+.textarea-input:not(:focus):valid ~ .floating-label-query {
+    top: -25px !important;
+    bottom: 0px !important;
+    left: 25px !important;
+}
+
+.floating-label-text, .floating-label-email, .floating-label-query {
+    color: #616161 !important;
+    font-size: 15px !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    transition: 0.2s ease all !important;
+}
+
+.floating-label-text, .floating-label-email {
+    left: 30px !important;
+    top: 15px !important;
+}
+
+.floating-label-query {
+    left: 25px !important;
+    top: 5px !important;
+}
+
+/* loader css */
+/* loader css */
+#overlay, #overlay_text {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 100;
+  }
+  
+  #text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 24px !important;  
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+  
+  @media only screen and (max-width : 500px) {
+    #text {
+      font-size: 16px !important;
+    }
+    .loader {
+      width: 16px !important;
+      height: 16px !important;
+    }
+  }
+  
+  .loader-text {
+    vertical-align: top;
+    display: inline-block;
+  }
+  
+  .loader {
+    display: inline-block;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #00796A; /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .underline {
+      display: block;
+      border-bottom: 1.8px solid #ffffff;
+      border-top: 1px solid #ccc;
+      width: 150px;
+      margin-top: 14px;
+      position: fixed;
+  }
+
+  @media only screen and (max-width: 1024px) {
+      .underline {
+        display: none;
+      }
+  }
+
+#myBtn {
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+.btn {
+    box-shadow: 1px 1px 10px #bdbdbd !important;
+    border-radius: 2px !important;
+    padding: 10px !important;
+    width: 70px !important;
+    font-weight: bold !important;
+}
+
+.btn:hover {
+    background-color: #37474f !important;
+}
+.btn:active {
+    box-shadow: 5px 5px 15px #bdbdbd !important;
+}
+
+  .secondary-btn {
+      color: #000000;
+  }
+  .secondary-btn:hover {
+      color: #000000;
+      background-color: #bdbdbd !important;
+  }
+  .secondary-btn:active {
+      background-color: #bdbdbd !important;
+  }
+
+  label input {
+    position: relative !important;
+    z-index: -9999 !important;
+  }
+
+  #gridRadios1 ~ .theRadio1, #gridRadios2 ~ .theRadio2 {
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+    background: url("/static/assets/svg/ic_radio_button_unchecked_black_24px.svg") !important;
+  }
+
+  #gridRadios1:checked + .theRadio1, #gridRadios2:checked + .theRadio2 {
+    background: url("/static/assets/svg/ic_radio_button_checked_black_24px.svg") !important;
+  }
+  
+  .myCheckbox ~ .theCheckbox {
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+    background: url("/static/assets/svg/ic_check_box_outline_blank_black_24px.svg") !important;
+  }
+  
+  .myCheckbox:checked + .theCheckbox {
+    background: url("/static/assets/svg/ic_check_box_black_24px.svg") !important;
+  }
+
+
+  #myModal {
+      margin-top: 250px !important; 
+  }
+
+  .modal-title {
+      color: #000000 !important;
+  }
+
+  .nav-background {
+      background-color: #00796A !important;
+      transition: background-color 500ms linear !important; 
+  }
+
+  .nav-background-inverse {
+    background-color: transparent !important;
+    transition: background-color 500ms linear !important; 
+  }

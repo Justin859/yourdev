@@ -1,0 +1,95 @@
+{% extends 'ms_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row" style="padding: 15px; margin-top: 18px;">
+        <div class="col-12">
+            <div class="card how-to" style="background: url('/static/assets/images/agreement-2286439_1920.jpg') center / cover;">
+                <div class="card-body">
+                    <h4 class="card-title">Our Services</h4>
+                    <h6 class="card-subtitle mb-2">We are here to help you every step of the way.
+                        Get on the web with yourdev.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-12 col-md-4">
+            <div class="card how-to-card">
+                <div class="text-container">
+                    Websites
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Yourdev will host, maintain and update your website.</p>
+                    <p class="card-text">We also implement simple self maintanence through an administration login.</p>
+                    <p class="card-text">A customized layout that can be easily updated with website administration.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card how-to-card">
+                <div class="text-container">
+                    Domain Registration
+                </div>
+                <div class="card-body">
+                    <p class="card-text">We will help you through the process of registering your domain for your website and emails.</p>
+                    <p class="card-text">It is far more professional to use your company name for your websites domain and emails.</p>
+                    <p class="card-text">example : info@yourdev.co.za, www.yourdev.co.za</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card how-to-card">
+                <div class="text-container">
+                    Communication
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Your website plays a big part communicating to clients online efficiently with no delay and quick response.</p>
+                    <p class="card-text">We break the communication barrier between client and company to get all the information they need from your</p>
+                    <p class="card-text">company and there information to you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-2" align="center">
+            <img src="{% static 'assets/icons/ic_touch_app_black_48dp_2x.png' %}">
+        </div>
+        <div class="col-4">
+            <p>
+                Get a website that actually does something. Features for your bussines and your clients to communicate with.
+            </p>
+        </div>
+        <div class="col-2" align="center">
+            <img src="{% static 'assets/icons/ic_shopping_cart_black_48dp_2x.png' %}">
+        </div>
+        <div class="col-4">
+            <p>
+                Need a gateway to sell your products. We will provide you with a web application that can sell!
+            </p>
+            
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-2" align="center">
+            <img src="{% static 'assets/icons/ic_update_black_48dp_2x.png' %}">
+        </div>
+        <div class="col-4">
+            <p>
+                Need an upgrade? If you have an old webiste that is outdated and missing todays standards we will upgrade it for you.
+            </p>
+        </div>
+        <div class="col-2" align="center">
+            <img src="{% static 'assets/icons/ic_person_pin_black_48dp_2x.png' %}" align="center">
+        </div>
+        <div class="col-4">
+            <p>
+                Communication is key. Why not have a personal connection with the developer? With Yourdev that's the only way we know how.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

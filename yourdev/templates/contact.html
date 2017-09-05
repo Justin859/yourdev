@@ -23,23 +23,26 @@
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
             <div class="mdc-card" style="padding:15px;">
                 <div class="mdc-client_name mdc-textfield--box">
-                    <input type="text" name="client_name" maxlength="100" id="mdc-client_name" class="mdc-textfield__input" aria-controls="username-helptext" required>
-                    <label class="mdc-textfield__label" for="mdc-client_name">Your name</label>
+                    <input type="text" name="client_name" maxlength="100" id="mdc-client-name" class="mdc-textfield__input" aria-controls="username-validation-msg" required>
+                    <label class="mdc-textfield__label" for="mdc-client-name">Your name</label>
                 </div>
-                <p id="username-helptext" class="mdc-textfield-helptext" aria-hidden="true">
-                    Preferably your full name
+                <p id="username-validation-msg" class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg">
+                    Please enter your name.
                 </p>
                 <div class="mdc-client-mail mdc-textfield--box">
                     <input type="email" name="client_email" maxlength="255" id="mdc-client-mail" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
                     <label class="mdc-textfield__label" for="mdc-client-mail">Your email address</label>
                 </div>
                 <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="email-validation-msg">
-                Please enter a valid email address
+                    Please enter a valid email address.
                 </p>
                 <div class="mdc-client-query mdc-textfield--multiline">
-                    <textarea maxlength=1001 name="client_query" id="mdc-client-query" class="mdc-textfield__input" rows="8" requried></textarea>
+                    <textarea maxlength=1001 name="client_query" id="mdc-client-query" class="mdc-textfield__input" rows="8" aria-controls="query-validation-msg" required></textarea>
                     <label for="mdc-client-query" class="mdc-textfield__label">Your Query</label>
                 </div>
+                <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="query-validation-msg">
+                    Please enter your query.
+                </p>
                 <hr>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-6">
                     <button type="submit" class="mdc-button mdc-button--accent mdc-button--raised mdc-card__action send-query">Send Query</button>
@@ -50,24 +53,23 @@
 </div>
 </form>
 
-<div id="overlay_text">
-    <div id="text_message">Sending Query...</div>
-</div>
-
 <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner">       
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-phone">
             <div class="mdc-card mdc-card--theme-dark">
                 <section class="mdc-card__primary">
                     email us at <a href="mailto:info@yourdev.co.za?Subject=Online Query (yourdev.co.za)" style="text-decoration: none; color:#00796b" target="_top"><b>info@yourdev.co.za</b></a>
-                </section>            
-            </div>        
+                </section>
+            </div>
         </div>
     </div>
 </div>
 
 <div id="overlay">
-    <div id="text"><div class="loader"></div></div>
+    <div id="text">
+        <div class="loader"></div>
+        <div class="loader-text">&nbsp;Sending Query...</div>
+    </div>
 </div>
 
 {% endblock %}

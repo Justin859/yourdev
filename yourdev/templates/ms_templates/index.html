@@ -1,0 +1,120 @@
+{% extends 'ms_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                </div>
+                <div class="modal-body">
+                    {{message}}
+                </div>
+                <div class="modal-footer">
+                    <a href="" type="button" class="btn secondary-btn" style="background-color: #ffffff; box-shadow: none !important;" data-dismiss="modal">OK</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="container-fluid">
+    <div class="row" style="padding: 15px;">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">WELCOME TO YOURDEV</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Are you looking for more than just a website?</h6>
+                    <p class="card-text">Then you have come to the right place! We develop user friendly Web Applications for businesses who need more than just the typical website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">About</h4>
+                    <p class="card-text"><b>Yourdev</b> focuses on simplicity for the end user and the websites adminstrator.
+                        Our ideal targets are <u><i>small to medium businesses</i></u> that need their image on the web,
+                        whether it's to market their <i>services</i>, <i>events</i>, <i>products</i>...</p>
+                    <p class="card-text">We are in a world of information technology where every bit of data counts. <b>Get started now with Yourdev!</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card get-started" style="background: url('/static/assets/images/hand-895592_1920.jpg') center / cover;">
+                <div class="card-body">
+                    <a href="/Get-Started/" class="card-link" style="font-size: 13px;"><b>GET STARTED</b></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-12">
+            <div class="card how-to" style="background: url('/static/assets/images/entrepreneur-593378_1920.jpg') center / cover;">
+                <div class="card-body">
+                    <h4 class="card-title">How does it work?</h4>
+                    <h6 class="card-subtitle mb-2">In just a few steps we'll be in touch!</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-12 col-md-6">
+            <div class="card how-to-card">
+                <div class="img-container" style="text-align: center;">
+                    <img class="card-img-top" src="{% static 'assets/icons/ic_link_white_48dp_2x.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Navigate to the Get Started Page</h4>
+                    <p class="card-text">On this page you will fill in a quick and simple form to describe your business and what type of website your business needs.</p>
+                    <a href="/Get-Started/" class="card-link" style="background-color: #263238; color:#ffffff; font-size: 13px;"><b>GET STARTED</b></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="img-container" style="text-align: center;">
+                    <img class="card-img-top" src="{% static 'assets/icons/ic_assignment_white_48dp_2x.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Complete And Submit The Form</h4>
+                    <p class="card-text">Once the form is submitted you will recieve a quotation evaluated on the scale of your websites needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding: 15px;">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="img-container" style="text-align: center;">       
+                    <img class="card-img-top" src="{% static 'assets/icons/ic_forum_white_48dp_2x.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Contact The Developer</h4>
+                    <p class="card-text">Recieve the contact details of the developer. Meet in person, chat over email, skype or a friendly phone call.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="img-container" style="text-align: center;">
+                    <img class="card-img-top" src="{% static 'assets/icons/ic_web_white_48dp_2x.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Your New Website</h4>
+                    <p class="card-text">Recieve the details of your new website and get to know how your Website/ Web Application works.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
