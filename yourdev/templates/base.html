@@ -17,12 +17,12 @@
                 <div class="mdc-toolbar__row" style="height: 256px;">
                   <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
                     <div class="hide-desktop"><a class="material-icons mdc-toolbar__icon--menu menu">menu</a></div>
-                    <span class="mdc-toolbar__title" style="font-size: 2.125rem;"><a href="/" style="text-decoration: none; color: #fff;">yourdev.co.za</a></span>
+                    <span class="mdc-toolbar__title"><a href="/" style="text-decoration: none; color: #fff;"><img class="logo-png" src="{% static 'assets/logo_main_3.png' %}" /></a></span>
                   </section>
                   <div class="hide-mobile">
                   <section class="mdc-toolbar__section  my-modified-toolbar-section">
                         <nav id="toolbar-tab-bar-modified" class="mdc-tab-bar mdc-tab-bar-upgraded">
-                            <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Get-Started/">Get Started</a>                            
+                            <a class="mdc-tab" data-mdc-auto-init="MDCRipple" href="/Get-Started/">Get Started</a>                            
                             {% if request.get_full_path == "/Services/" %}
                             <a class="mdc-tab mdc-tab--active" data-mdc-auto-init="MDCRipple" href="/Services/">Services</a>
                             <span class="mdc-tab-bar__indicator" style="transform: translateX(160px) scale(0.333333, 1); visibility: visible;"></span>                            
@@ -46,9 +46,18 @@
         <aside class="mdc-temporary-drawer mdc-typography">
             <nav class="mdc-temporary-drawer__drawer">
             
-                <div class="mdc-temporary-drawer__toolbar-spacer" style="background-image: url('/static/assets/images/background-2551941_1280.jpg'); background-size: cover; height: 12rem;"><a href="/" style="text-decoration: none; color:#fff; font-size:25px;">yourdev.co.za</a></div>
+                <div class="mdc-temporary-drawer__toolbar-spacer" style="background-color: #00796b; height: 4rem;"><a href="/" style="text-decoration: none; color:#fff;"><img src="{% static 'assets/logo_main_3.png' %}"></a></div>
             
                 <nav id="icon-with-text-demo" class="mdc-temporary-drawer__content mdc-list">
+                {% if request.get_full_path == '/' %}
+                <a class="mdc-list-item mdc-temporary-drawer--selected" href="/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">home</i>Home
+                </a>
+                {% else %}
+                <a class="mdc-list-item" href="/">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">home</i>Home
+                </a>
+                {% endif %}
                 {% if request.get_full_path == '/Get-Started/' %}
                 <a class="mdc-list-item mdc-temporary-drawer--selected" href="/Get-Started/">
                     <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">assignment</i>Get Started
@@ -80,6 +89,28 @@
             </nav>
         </aside>
 
+    <div class="footer mdc-layout-grid mdc-layout-grid-default-margin">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet" style="display: flex; justify-content: center;">
+                <nav class="mdc-list">
+                    <a href="/" class="mdc-list-item" data-mdc-auto-init="MDCRipple"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">home</i>Home</a>
+                    <a href="/Get-Started/" class="mdc-list-item" data-mdc-auto-init="MDCRipple"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">link</i>Get Started</a>
+                </nav>
+                <nav class="mdc-list">
+                    <a href="/Services/" class="mdc-list-item" data-mdc-auto-init="MDCRipple"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">build</i>Services</a>
+                    <a href="/Contact/" class="mdc-list-item" data-mdc-auto-init="MDCRipple"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">email</i>Contact</a>
+                </nav>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet" align="center">
+                <img src="{% static 'assets/yourdev_logo.png' %}">
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet" style="display: flex; justify-content: center;">
+                <ul class="mdc-list mdc-list--dense">
+                    <span class="mdc-list-item">&copy; 2017&nbsp;<b>Yourdev Web Development</b></span>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
     <script src="{% static 'vendor/bower_components/jquery/dist/jquery.min.js' %}"></script>    

@@ -19,32 +19,32 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="/" style="font-size: 22px; color: #ffffff;"><b>yourdev.co.za</b></a>
+      <a class="navbar-brand" href="/" style="font-size: 22px; color: #ffffff;"><img class="logo-png" src="{% static 'assets/logo_main_3.png' %}" /></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 hide-mobile hide-tablet">
           <li class="nav-item">
-            <a class="nav-link" href="/Get-Started/" style="font-size: 15px; margin-left: 18px;"><b>GET STARTED</b> <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/Get-Started/"><b>GET STARTED</b> <span class="sr-only">(current)</span></a>
           </li>
           <div class="link-container">
           {% if request.get_full_path == '/Services/' %}
           <li class="nav-item active">
-            <a class="nav-link" href="/Services/" style="font-size: 15px; margin-left: 31px;"><b>SERVICES</b></a>
+            <a class="nav-link" href="/Services/"><b>SERVICES</b></a>
             <span class="underline"></span>            
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="/Services/" style="font-size: 15px; margin-left: 31px;"><b>SERVICES</b></a>
+            <a class="nav-link" href="/Services/"><b>SERVICES</b></a>
           </li>
           {% endif %}
           </div>
           {% if request.get_full_path == '/Contact/' %}
           <li class="nav-item active">
-            <a class="nav-link" href="/Contact/" style="font-size: 15px; margin-left: 31px;"><b>CONTACT</b></a>
+            <a class="nav-link" href="/Contact/"><b>CONTACT</b></a>
             <span class="underline"></span>            
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="/Contact/" style="font-size: 15px; margin-left: 31px;"><b>CONTACT</b></a>          
+            <a class="nav-link" href="/Contact/"><b>CONTACT</b></a>          
           </li>
           {% endif %}
         </ul>
@@ -52,6 +52,34 @@
     </nav>
     <div class="container-fluid" style="background: url('/static/assets/images/responsive-1622825_new.jpg') center / cover; padding: 160px;"></div>
     {% block content %}{% endblock %}
+
+    <div class="container-fluid">
+      <div class="footer row">
+        <div class="col-12 col-md-4" align="center">
+            <div class="footer-links" style="display: inline-block;">
+              <a href="/" style="padding-right: 36px;"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">home</i> <span>Home</span></a>
+              <a href="/Services/"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">build</i> <span href="">Services</span></a>
+            </div>
+            <div class="footer-links" style="display: inline-block;">
+              <a href="/Get-Started/"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">link</i> <span href="">Get Started</span></a>
+              <a href="/Contact/"><i class="mdc-list-item__start-detail material-icons hide-mobile" aria-hidden="true">mail</i> <span href="">Contact</span></a>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4" style="padding: 20px;">
+            <div class="" style="display: flex !important; justify-content: center !important;">
+                <img src="{% static 'assets/yourdev_logo.png' %}">
+            </div>
+        </div>
+        <div class="col-12 col-md-4" style="padding: 36px;">
+            <div style="display: flex; justify-content: center;">
+                <ul class="list-unstyled">
+                    <li class="">&copy; 2017&nbsp;<b>Yourdev Web Development</b></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'vendor/bower_components/jquery/dist/jquery.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

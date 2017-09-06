@@ -2,7 +2,7 @@
   --mdc-theme-primary: #00796b;
   --mdc-theme-accent: #263238;
 }
-  
+
 .get-started-card {
   width: 100%;
   height: 100%;
@@ -35,6 +35,10 @@
     display: none;
   }
 
+  .logo-png {
+    margin-bottom: -0.5rem !important;
+  }
+
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 1024px){
@@ -46,6 +50,10 @@
 @media only screen and (min-width: 760px) {
   .hide-desktop { 
     display: none;
+  }
+
+  .logo-png {
+    margin-bottom: -4px !important;
   }
 }
 
@@ -99,6 +107,12 @@
 
 body {
   background-color: #fafafa;
+  margin: 0px;
+}
+
+.mdc-card-container {
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .mdc-card {
@@ -170,4 +184,9 @@ body {
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+.footer {
+  background-color: #eeeeee;
+  color: #000000;
 }

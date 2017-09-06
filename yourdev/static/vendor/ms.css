@@ -17,7 +17,9 @@ body {
         padding-right: 50px;
     }
     .navbar .nav-link {
+        font-size: 15px;
         position: relative;
+        margin-left: 31px;
     }
     .navbar {
         padding-bottom: 15px; 
@@ -330,3 +332,23 @@ textarea:focus {
     background-color: transparent !important;
     transition: background-color 500ms linear !important; 
   }
+
+  .footer {
+  background-color: #eeeeee;
+  color: #000000;
+}
+
+.footer-links {
+    padding-top: 36px;
+} 
+
+.footer-links a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer-links span {
+    padding-right: 25px;
+    padding-left: 25px;
+    vertical-align: top;
+}

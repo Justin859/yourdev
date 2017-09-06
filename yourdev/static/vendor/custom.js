@@ -34,7 +34,7 @@ if (page === 'Services' || page === 'Contact' || page === '') {
         drawer.open = true });
 };
 
-if (page === '') {
+if (page === '' && document.querySelector('#my-mdc-dialog')) {
     mdc.dialog.MDCDialog.attachTo(document.querySelector('#my-mdc-dialog')).show();
 }
 
