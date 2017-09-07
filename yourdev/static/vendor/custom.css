@@ -79,35 +79,18 @@
     height: 14.200rem;
   }
 
-  #company_physical_address, #company_description, #website_description {
-    width: 15rem;
-    resize: none;
-  }
-
 }
 
-@media(min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .get-started-card {
     height: 14.850rem;
   }
-  #company_physical_address, #company_description, #website_description {
-    width: 40rem;
-    resize: none;
-  }
-  #client_first_name, #client_last_name {
-    width: 16rem;
-  }
-  #company_name, #client_email {
-    width: 33.5rem;
-  }
-  .website-type {
-    width: 20rem;
-  }
 }
+
 
 body {
   background-color: #fafafa;
-  margin: 0px;
+  margin: 0px !important;
 }
 
 .mdc-card-container {
@@ -189,4 +172,8 @@ body {
 .footer {
   background-color: #eeeeee;
   color: #000000;
+}
+
+textarea {
+  resize: none;
 }

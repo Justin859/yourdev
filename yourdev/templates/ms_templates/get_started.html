@@ -17,31 +17,34 @@
   <body>
 
     <div class="container">
-      <div class="row" style="padding: 15px;">
-        <div class="col-2"></div>
-        <div class="col-8">
-          <div class="card how-to-card">
+      <div class="row" style="padding: 25px;">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="card how-to-card" style="padding: 15px;">
               <div class="text-container" style="padding-top: 25px;">
                   <h4>Client Form</h4>
-                  <h6>This from will be uploaded to us so that we can start communicating straight away. We will send you a Quote/ Proposal for your bussiness to agree upon.</h6>
+                  <h6>This from will be uploaded to us so that we can start communicating straight away. We will send you a Quote (or Proposal) for your bussiness to agree upon.</h6>
               </div>
-              <form action="" method="POST" name="client_form" style="padding: 15px;">
+              <form action="" method="POST" name="client_form">
                 {% csrf_token %}
+                <br />
                 <h4 class="card-title">Client Details</h4><br />
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-12">
                         <input type="text" maxlength="100" name="client_first_name" class="text-input" id="InputName" value="" aria-describedby="NameHelp" required>                       
                         <small class="form-text text-danger invisible">Please enter your first name.</small>    
                         <span class="floating-label-text">First Name<span class="required-mark">*</span></span> 
                     </div>
-                    <div class="col-5">
+                </div>
+                <div class="row">
+                    <div class="col-12">
                         <input type="text" maxlength="100" name="client_last_name" class="text-input" id="InputName" value="" aria-describedby="NameHelp" required>
                         <small class="form-text text-danger invisible">Please enter your last name.</small>    
                         <span class="floating-label-text">Last Name<span class="required-mark">*</span></span> 
                     </div>
                 </div>
                 <div class="row">
-                  <div class="col-10">
+                  <div class="col-12">
                       <input type="email" maxlength="255" name="client_email" id="InputEmail" value="" class="form-control email-input" required>
                       <small class="form-text text-danger invisible">Please enter a valid email address.</small>
                       <span class="floating-label-email">Your email address<span class="required-mark">*</span></span>                                                 
@@ -49,23 +52,23 @@
                 </div>
                 <h4 class="card-title">Company Details</h4><br />
                 <div class="row">
-                  <div class="col-10">
+                  <div class="col-12">
                       <input type="text" maxlength="100" name="company_name" class="text-input" id="InputName" value="" aria-describedby="NameHelp" required>
                       <small class="form-text text-danger invisible">Please enter the company's name.</small>    
                       <span class="floating-label-text">Comapny Name<span class="required-mark">*</span></span> 
                   </div>
                 </div><br />
                 <div class="row">
-                  <div class="col-10">
+                  <div class="col-12">
                       <textarea type="text" maxlength=1001 name="company_physical_address" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
                       <small class="form-text text-danger invisible">Please enter the company's physical address.</small> 
                       <span class="floating-label-query">Physical Address<span class="required-mark">*</span></span>                                                                         
                   </div>
                 </div><br />
                 <div class="row">
-                  <div class="col-10">
+                  <div class="col-12">
                       <textarea type="text" maxlength=1001 name="company_description" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
-                      <small class="form-text text-danger invisible">Please enter the company's physical address.</small> 
+                      <small class="form-text-help text-muted invisible">{{form.company_description.help_text}}</small> 
                       <span class="floating-label-query">Company Description<span class="required-mark">*</span></span>                                                                         
                   </div>
                 </div>
@@ -95,9 +98,9 @@
                   </div>
                 </div><br /><br />
                 <div class="row">
-                  <div class="col-10">
+                  <div class="col-12">
                       <textarea type="text" maxlength=1001 name="website_description" class="form-control textarea-input" id="InputQuery" rows="8" required></textarea>
-                      <small class="form-text text-danger invisible">Please enter the company's description.</small> 
+                      <small class="form-text-help text-muted invisible">{{form.website_description.help_text}}</small> 
                       <span class="floating-label-query">Website Description<span class="required-mark">*</span></span>                                                                         
                   </div>
                 </div>

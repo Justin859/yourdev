@@ -17,13 +17,13 @@ class ClientForm(forms.Form):
     
     company_name = forms.CharField(label='company name', max_length=255, required=True, help_text='Enter your company name')
     company_physical_address = forms.CharField(label='company address', max_length=1001, required=True, help_text="Enter your company's physical address")
-    company_description = forms.CharField(label='company description', max_length=1001, required=True, help_text="Give a description for your company's products or services.")
+    company_description = forms.CharField(label='company description', max_length=1001, required=True, help_text="Give a description of your company's products or services.")
 
     WEBSITE_TYPE = (('Web Application', 'Web Application'), ('Standard Website' ,'Standard Website'))
 
     has_domain = forms.BooleanField(label='does your company have a registered domain?', required=False)
     website_type = forms.ChoiceField(label='What type of website is needed?', choices=WEBSITE_TYPE, required=True)
-    website_description = forms.CharField(label='website description', max_length=1001, required=True, help_text="Give a description for what your company would like the website to do.")
+    website_description = forms.CharField(label='website description', max_length=1001, required=True, help_text="Give a description of what your company would like the website to do.")
 
 # Custom Validators
 

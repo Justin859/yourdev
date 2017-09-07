@@ -22,21 +22,21 @@
     <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
             <div class="mdc-card" style="padding:15px;">
-                <div class="mdc-client_name mdc-textfield--box">
+                <div class="mdc-client_name mdc-textfield--box mdc-form-field">
                     <input type="text" name="client_name" maxlength="100" id="mdc-client-name" class="mdc-textfield__input" aria-controls="username-validation-msg" required>
                     <label class="mdc-textfield__label" for="mdc-client-name">Your name</label>
                 </div>
                 <p id="username-validation-msg" class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg">
                     Please enter your name.
                 </p>
-                <div class="mdc-client-mail mdc-textfield--box">
+                <div class="mdc-client-mail mdc-textfield--box mdc-form-field">
                     <input type="email" name="client_email" maxlength="255" id="mdc-client-mail" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
                     <label class="mdc-textfield__label" for="mdc-client-mail">Your email address</label>
                 </div>
                 <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="email-validation-msg">
                     Please enter a valid email address.
                 </p>
-                <div class="mdc-client-query mdc-textfield--multiline">
+                <div class="mdc-client-query mdc-textfield--multiline mdc-form-field">
                     <textarea maxlength=1001 name="client_query" id="mdc-client-query" class="mdc-textfield__input" rows="8" aria-controls="query-validation-msg" required></textarea>
                     <label for="mdc-client-query" class="mdc-textfield__label">Your Query</label>
                 </div>

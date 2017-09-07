@@ -31,12 +31,20 @@ $(document).ready(function(){
         $("#overlay_text").hide();
     });
 
-    $(document).on('change', function(e){
+    $(document).on('change focusout', function(e){
         if($(e.target).is(':invalid'))  {
             $(e.target).next('.form-text').removeClass('invisible');
         } else {
             $(e.target).next('.form-text').addClass('invisible');
         }
+    });
+
+    $(document).on('focusin', 'textarea', function(e){
+        $(e.target).next('.form-text-help').removeClass('invisible');
+    });
+
+    $(document).on('focusout', 'textarea', function(e){
+        $(e.target).next('.form-text-help').addClass('invisible');
     });
 
     $(".email-input").on("change", function(e) {

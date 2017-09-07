@@ -141,7 +141,7 @@ textarea:focus {
 .text-input:focus ~ .floating-label-text .required-mark,
 .email-input:focus ~ .floating-label-email .required-mark,
 .textarea-input:focus ~ .floating-label-query .required-mark {
-    color: #ff5131 !important;
+    color: #d50000 !important;
 }
 
 .text-input:focus:focus ~ .floating-label-text,
@@ -161,7 +161,7 @@ textarea:focus {
 }
 
 .floating-label-text, .floating-label-email, .floating-label-query {
-    color: #616161 !important;
+    color: #616161;
     font-size: 15px !important;
     position: absolute !important;
     pointer-events: none !important;
@@ -178,7 +178,14 @@ textarea:focus {
     top: 5px !important;
 }
 
-/* loader css */
+textarea:invalid {
+    border: 1.3px solid #d50000;
+}
+
+.invalid-color {
+    color: #d50000 !important;
+}
+
 /* loader css */
 #overlay, #overlay_text {
     position: fixed;
@@ -243,7 +250,7 @@ textarea:focus {
       border-bottom: 1.8px solid #ffffff;
       border-top: 1px solid #ccc;
       width: 150px;
-      margin-top: 14px;
+      margin-top: 16px;
       position: fixed;
   }
 
@@ -351,4 +358,8 @@ textarea:focus {
     padding-right: 25px;
     padding-left: 25px;
     vertical-align: top;
+}
+
+.text-danger {
+    color: #d50000 !important;
 }

@@ -14,44 +14,40 @@
   </head>
   <body>
 
+    <form action="" method="POST" name="client_form">
+        
     <div class="mdc-layout-grid">
       <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2 hide-tablet hide-mobile">
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
-          <div class="mdc-card">
+          <div class="mdc-card" style="padding: 15px;">
               <section class="mdc-card__primary mdc-card__media mdc-theme--accent-bg">
                   <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">Client Form</h1>
                   <h2 class="mdc-card__subtitle mdc-theme--text-primary-on-primary">This from will be uploaded to us so that we can start communicating straight away. We will send you a Quote/ Proposal for your bussiness to agree upon.</h2>
               </section>
-              <form action="" method="POST" name="client_form">
                   {% csrf_token %}
-              <section class="mdc-card__primary">
+                <br />
                 <h1 class="mdc-card__title--large">Client Details</h1>
-              </section>
-              <div class="mdc-layout-grid__inner" style="padding: 15px !important;">
-                  <div class="mdc-layout-grid__cell mdc-layout-grid--span-6">
+                <br />
                     <div class="mdc-client-first-name mdc-textfield--box mdc-form-field">
-                        <input type="text" name="client_first_name" maxlength="100" id="client_first_name" class="mdc-textfield__input" aria-controls="lastname-validation-msg" required>
+                        <input type="text" name="client_first_name" maxlength="100" id="client_first_name" class="mdc-textfield__input" aria-controls="firstname-validation-msg" required>
                         <label class="mdc-textfield__label" for="client_first_name">First Name</label>
-                    </div>
-                    <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="lastname-validation-msg">
-                        Please enter your first name.
-                    </p>
-                  </div>
 
-                  <div class="mdc-layout-grid__cell mdc-layout-grid--span-6">
-                    <div class="hide-tablet hide-desktop"><br></div>   
+                    </div>
+                    <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="firstname-validation-msg">
+                        Please enter your first name.
+                    </p> 
+                <br />
                     <div class="mdc-client-last-name mdc-textfield--box mdc-form-field">
-                        <input type="text" name="client_last_name" maxlength="100" id="client_last_name" class="mdc-textfield__input" aria-controls="username-helptext" required>
+                        <input type="text" name="client_last_name" maxlength="100" id="client_last_name" class="mdc-textfield__input" aria-controls="lastname-validation-msg" required>
                         <label class="mdc-textfield__label" for="client_last_name">Last Name</label>
                     </div>
-                    <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="email-validation-msg">
+                    <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="lastname-validation-msg">
                         Please enter your last name.
                     </p>
-                  </div>
-              </div>
-              <section class="mdc-card__primary">
+
+                <br />
                   <div class="mdc-client-email mdc-textfield--box mdc-form-field">
                       <input type="email" name="client_email" maxlength="255" id="client_email" class="mdc-textfield__input" aria-controls="email-validation-msg" required>
                       <label class="mdc-textfield__label" for="client_email">Email Address</label>
@@ -60,38 +56,33 @@
                     Please enter a valid email address
                   </p>
 
-              </section>
-              <section class="mdc-card__primary">
                   <h1 class="mdc-card__title--large">Company Details</h1>
-              </section>
-              <section class="mdc-card__primary">
+                  <br />
                   <div class="mdc-company-name mdc-textfield--box mdc-form-field">
-                      <input type="text" name="company_name" maxlength="255" id="company_name" class="mdc-textfield__input" aria-controls="company-name-validation-msg" required>
+                      <input type="text" name="company_name" maxlength="255" style="width: 100% !important;" id="company_name" class="mdc-textfield__input" aria-controls="company-name-validation-msg" required>
                       <label class="mdc-textfield__label" for="client_first_name">Company Name</label>
                   </div>
                   <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="company-name-validation-msg">
                     Please enter the name of the company.
                   </p>
-              </section>
-              <section class="mdc-card__primary">
+
                   <div class="mdc-company-physical-address mdc-textfield--multiline mdc-form-field">
-                      <textarea maxlength=1001 name="company_physical_address" id="company_physical_address" class="mdc-textfield__input" rows="5" required></textarea>
+                    <textarea maxlength=1001 name="company_physical_address" style="width: 100% !important;" id="company_physical_address" class="mdc-textfield__input" aria-controls="company-physical-address-validation-msg" rows="5" required></textarea>
                     <label for="company_physical_address" class="mdc-textfield__label">Physical Address</label>
                   </div>
-              </section>
-              <section class="mdc-card__primary">
+                    <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="company-physical-address-validation-msg">
+                        Please enter your company's physical address.
+                    </p>
+                  <br /><br />
                   <div class="mdc-company-description mdc-textfield--multiline mdc-form-field">
-                      <textarea maxlength=1001 name="company_description" id="company_description" class="mdc-textfield__input" aria-controls="description-helptext" rows="5" required></textarea>
+                      <textarea maxlength=1001 name="company_description" style="width: 100% !important;" id="company_description" class="mdc-textfield__input" aria-controls="description-helptext" rows="5" required></textarea>
                       <label for="company_description" class="mdc-textfield__label">Company Description</label>
                   </div>
                   <p id="description-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                       {{form.company_description.help_text}}
                   </p>
-              </section>
-              <section class="mdc-card__primary">
                 <h1 class="mdc-card__title--large">Website Details</h1>
-              </section>
-              <section class="mdc-card__primary">
+                <br />
                   <div class="mdc-form-field">
                     <div class="mdc-checkbox mdc-has-domain-checkbox">
                         <input type="checkbox"
@@ -109,9 +100,8 @@
                     </div>
                     <label for="has_domain">{{form.has_domain.label}}</label>
                   </div>
-              </section>
-              <section class="mdc-card__primary">
-                    <label for="has_domain"><b>{{form.website_type.label}}</b></label>
+                  <br />
+                <label for="has_domain"><b>{{form.website_type.label}}</b></label>
                     
                   <div class="mdc-form-field">
                         <div class="mdc-radio standard-radio">
@@ -132,25 +122,24 @@
                         </div>
                         <label id="radio-2-label" for="radio-2">Web Application</label>
                   </div>
-              </section>
-              <section class="mdc-card__primary">
-                <div class="mdc-website-description mdc-textfield--multiline mdc-form-field">
-                    <textarea maxlength=1001 name="website_description" id="website_description" class="mdc-textfield__input" aria-controls="web-description-helptext" rows="5" required></textarea>
+                <div class="mdc-website-description mdc-textfield--multiline mdc-form-field" style="width: 100% !important;">
+                    <textarea maxlength=1001 name="website_description" style="width: 100% !important;" id="website_description" class="mdc-textfield__input" aria-controls="web-description-helptext" rows="5" required></textarea>
                     <label for="website_description" class="mdc-textfield__label">Website Description</label>
                 </div>
                 <p id="web-description-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                     {{form.website_description.help_text}}
                 </p>
-              </section>
-              <section class="mdc-card__primary">
-                <button type="submit" class="mdc-button mdc-button--accent mdc-button--raised" data-mdc-auto-init='MDCRipple'>Submit form</button>
-              </section>
-            </form>
-          </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-6">
+                        <button type="submit" class="mdc-button mdc-button--accent mdc-button--raised" data-mdc-auto-init='MDCRipple'>Submit form</button>
+                </div>
+            </div>
         </div>
 
       </div>
     </div>
+
+</form>
+
 
     <a href="/" class="mdc-button mdc-button--raised mdc-button--accent" id="myBtn" data-mdc-auto-init="MDCRipple">Back</a>
 
