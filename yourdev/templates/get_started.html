@@ -24,12 +24,12 @@
           <div class="mdc-card" style="padding: 15px;">
               <section class="mdc-card__primary mdc-card__media mdc-theme--accent-bg">
                   <h1 class="mdc-card__title mdc-card__title--large mdc-theme--text-primary-on-primary">Client Form</h1>
-                  <h2 class="mdc-card__subtitle mdc-theme--text-primary-on-primary">This from will be uploaded to us so that we can start communicating straight away. We will send you a Quote/ Proposal for your bussiness to agree upon.</h2>
+                  <h2 class="mdc-card__subtitle mdc-theme--text-primary-on-primary">This from will be uploaded to us so that we can start communicating straight away. We will send you a Quote (or Proposal) for your bussiness to agree upon.</h2>
               </section>
                   {% csrf_token %}
-                <br />
+                <br /><hr />
                 <h1 class="mdc-card__title--large">Client Details</h1>
-                <br />
+                <br /><hr />
                     <div class="mdc-client-first-name mdc-textfield--box mdc-form-field">
                         <input type="text" name="client_first_name" maxlength="100" id="client_first_name" class="mdc-textfield__input" aria-controls="firstname-validation-msg" required>
                         <label class="mdc-textfield__label" for="client_first_name">First Name</label>
@@ -55,9 +55,9 @@
                   <p class="mdc-textfield-helptext mdc-textfield-helptext--validation-msg" id="email-validation-msg">
                     Please enter a valid email address
                   </p>
-
+                  <br /><hr />
                   <h1 class="mdc-card__title--large">Company Details</h1>
-                  <br />
+                  <br /><hr />
                   <div class="mdc-company-name mdc-textfield--box mdc-form-field">
                       <input type="text" name="company_name" maxlength="255" style="width: 100% !important;" id="company_name" class="mdc-textfield__input" aria-controls="company-name-validation-msg" required>
                       <label class="mdc-textfield__label" for="client_first_name">Company Name</label>
@@ -81,8 +81,9 @@
                   <p id="description-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                       {{form.company_description.help_text}}
                   </p>
+                <br /><hr />
                 <h1 class="mdc-card__title--large">Website Details</h1>
-                <br />
+                <br /><hr />
                   <div class="mdc-form-field">
                     <div class="mdc-checkbox mdc-has-domain-checkbox">
                         <input type="checkbox"
@@ -100,7 +101,7 @@
                     </div>
                     <label for="has_domain">{{form.has_domain.label}}</label>
                   </div>
-                  <br />
+                  <br /><hr />
                 <label for="has_domain"><b>{{form.website_type.label}}</b></label>
                     
                   <div class="mdc-form-field">
@@ -122,6 +123,7 @@
                         </div>
                         <label id="radio-2-label" for="radio-2">Web Application</label>
                   </div>
+                  <br /><hr />
                 <div class="mdc-website-description mdc-textfield--multiline mdc-form-field" style="width: 100% !important;">
                     <textarea maxlength=1001 name="website_description" style="width: 100% !important;" id="website_description" class="mdc-textfield__input" aria-controls="web-description-helptext" rows="5" required></textarea>
                     <label for="website_description" class="mdc-textfield__label">Website Description</label>
@@ -129,6 +131,7 @@
                 <p id="web-description-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                     {{form.website_description.help_text}}
                 </p>
+                <br /><hr />
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-6">
                         <button type="submit" class="mdc-button mdc-button--accent mdc-button--raised" data-mdc-auto-init='MDCRipple'>Submit form</button>
                 </div>

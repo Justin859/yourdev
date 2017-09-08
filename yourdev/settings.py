@@ -36,10 +36,9 @@ EMAIL_BACKEND = 'django_ses.SESBackend'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
+EMAIL_HOST = 'bounce.yourdev.co.za'
 EMAIL_HOST_USER = 'query@yourdev.co.za'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_SSL = True
 EMAIL_PORT = 587
 
 # Application definition
