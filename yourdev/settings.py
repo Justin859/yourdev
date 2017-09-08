@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['yourdev-env.2dn3v2shtt.us-east-1.elasticbeanstalk.com', '127.0.0.1', 'yourdev.co.za']
+ALLOWED_HOSTS = ['yourdev-env.2dn3v2shtt.us-east-1.elasticbeanstalk.com', '127.0.0.1', '.yourdev.co.za']
 
 EMAIL_BACKEND = 'django_ses.SESBackend'
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django_user_agents',
     'yourdev',

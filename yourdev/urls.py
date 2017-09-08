@@ -15,14 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap
 from django.conf import settings
 from django.conf.urls.static import static
 from yourdev import views
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^Services/$', views.services, name='services'),
-    url(r'^Get-Started/$', views.get_started, name='Get-Started'),
+    url(r'^Get-Started/$', views.get_started, name='get_started'),
     url(r'^Contact/$', views.contact, name='contact'),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap')
 ]
