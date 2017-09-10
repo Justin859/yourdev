@@ -1,0 +1,21 @@
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kempton Park",
+    "addressRegion": "Gauteng",
+    "postalCode": "1618",
+    "streetAddress": "31 James Wright Avenue"
+  },
+  "name": "Yourdev Web Developement",
+  "openingHours": [
+    "Mo-Fr 9:00-17:00"
+  ],
+  "priceRange": "R7,500.00 - 25,000.00",
+  "url": "http://www.yourdev.co.za",
+  "image": "http://www.yourdev.co.za/static/assets/Ad_Image.png",
+  "logo": "http://www.yourdev.co.za/static/assets/yourdev_logo.png",
+  "makesOffer": "Service",
+  "description": "Website Hosting Company"
+}
